@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <div class="content">
-      <button class="route-btn" v-for="item in pathRoutes" :key="item.path" @click="jump(item)">
+      <el-button class="route-btn" v-for="item in pathRoutes" :key="item.path" @click="jump(item)">
         {{ item.title }}
-      </button>
+      </el-button>
     </div>
   </div>
 </template>

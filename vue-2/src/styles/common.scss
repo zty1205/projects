@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+$BASIC_UNIT_PX: 1px;
+$BASIC_UNIT_NUMBER: 1;
+// 表格内部文本滚动
+  @mixin scroll-box-clamp($paddingLeft: 8px, $line: 3, $align: center) {
+    overflow-y: auto;
+    display: -webkit-box;
+    line-clamp: $line;
+    box-orient: vertical;
+    text-align: $align;
+    padding-right: $paddingLeft;
+  }
+
+  @mixin scroll-box-em($paddingLeft: 8px, $line: 3, $em : 1em, $align: center) {
+    overflow-y: auto;
+    line-height: $em;
+    height: $line * $em;
+    text-align: $align;
+    padding-right: $paddingLeft;
+  }
+
+  .block {
+    display: block;
+  }
+
+
+  $MIN_FONT_SIZE: 12;
+  $MAX_FONT_SIZE: 28;
+  @for $font_size from $MIN_FONT_SIZE through $MAX_FONT_SIZE {
+    .fs-#{$font_size} {
+      font-size: $font_size * $BASIC_UNIT_PX;
+    }
+  }
+
+  $NORMAL_WIDTH: 180 200 240 280 300 320 360 400;
+  @each $width in $NORMAL_WIDTH {
+    .width-#{$width} {
+      width: $width * $BASIC_UNIT_PX;
+    } 
+  }
+
+  $NORMAL_MARGIN: 20;
+  @while $NORMAL_MARGIN > 0 {
+    .marginTop-#{$NORMAL_MARGIN} {
+      margin-top: $NORMAL_MARGIN * $BASIC_UNIT_PX;
+    }
+    .marginLeft-#{$NORMAL_MARGIN} {
+      margin-left: $NORMAL_MARGIN * $BASIC_UNIT_PX;
+    }
+    .marginRight-#{$NORMAL_MARGIN} {
+      margin-right: $NORMAL_MARGIN * $BASIC_UNIT_PX;
+    }
+    .marginBottom-#{$NORMAL_MARGIN} {
+      margin-bottom: $NORMAL_MARGIN * $BASIC_UNIT_PX;
+    }
+    $NORMAL_MARGIN: $NORMAL_MARGIN - $BASIC_UNIT_NUMBER
+  }
+
+  
+@mixin sizeScale($W, $H, $scale: 1, $LH:false) {
+  @if $LH{
+    line-height: $LH * $scale;
+  }
+  width: $W * $scale;
+  height: $H * $scale;
+}
+
+@mixin img-uploader($imgWidth: 100px, $imgHeight: 100px,$scale: 1) {
+  /deep/ .photo-uploader-icon {
+    font-size: 20px;
+    color: #8c939d;
+    @include sizeScale($imgWidth, $imgHeight, 1, $imgHeight);
+    text-align: center;
+  }
+  /deep/ .photo-show {
+    display: block;
+    margin: 0 auto;
+    @include sizeScale($imgWidth, $imgHeight, 1, $imgHeight);
+  }
+
+  /deep/ .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  /deep/ .el-upload:hover {
+    border-color: #409eff;
+  }
+
+}
+
