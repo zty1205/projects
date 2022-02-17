@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script></script>
 
 <template>
   <router-view></router-view>
@@ -11,5 +9,12 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+button {
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.15s ease;
+  outline: none;
+  user-select: none;
 }
 </style>

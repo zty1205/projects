@@ -3,6 +3,21 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 const routes = [
   { path: '/', component: () => import('@/views/home.vue'), meta: { title: '首页' } },
   {
+    path: '/basic',
+    component: () => import('@/views/basic/index.vue'),
+    meta: { title: 'Vue' },
+    children: [
+      {
+        path: 'compose-api',
+        name: 'compose-api',
+        component: () => import('@/views/basic/compose-api.vue'),
+        meta: {
+          title: 'Vue组合式API'
+        }
+      }
+    ]
+  },
+  {
     path: '/router',
     component: () => import('@/views/router/index.vue'),
     meta: { title: 'Router' },

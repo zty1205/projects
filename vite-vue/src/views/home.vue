@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <div class="content">
-      <el-button class="route-btn" v-for="item in pathRoutes" :key="item.path" @click="jump(item)">
+      <button class="route-btn" v-for="item in pathRoutes" :key="item.path" @click="jump(item)">
         {{ item.title }}
-      </el-button>
+      </button>
     </div>
   </div>
 </template>
@@ -51,17 +51,14 @@ export default {
 }
 .route-btn {
   color: #fff;
-  margin: 0.2em 0;
   width: 200px;
   text-align: center;
   padding: 12px 24px;
-  display: inline-block;
-  vertical-align: middle;
   background-color: #4fc08d;
   transition: all 0.15s ease;
   box-sizing: border-box;
   border: 1px solid #4fc08d;
   border-radius: 2em;
-  outline: none;
+  margin: 4px 12px;
 }
 </style>
