@@ -14,6 +14,14 @@ const routes = [
         meta: {
           title: 'Vue组合式API'
         }
+      },
+      {
+        path: 'script-setup',
+        name: 'script-setup',
+        component: () => import('@/views/basic/script-setup.vue'),
+        meta: {
+          title: 'Vue Script setup写法'
+        }
       }
     ]
   },
