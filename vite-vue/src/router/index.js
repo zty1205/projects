@@ -22,6 +22,14 @@ const routes = [
         meta: {
           title: 'Vue Script setup写法'
         }
+      },
+      {
+        path: 'teleport',
+        name: 'teleport',
+        component: () => import('@/views/basic/teleport.vue'),
+        meta: {
+          title: 'teleport组件'
+        }
       }
     ]
   },
