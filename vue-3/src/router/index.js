@@ -30,6 +30,14 @@ const routes = [
         meta: {
           title: 'teleport组件'
         }
+      },
+      {
+        path: 'life-style',
+        name: 'life-style',
+        component: () => import('@/views/basic/life-style.vue'),
+        meta: {
+          title: '生命周期'
+        }
       }
     ]
   },
