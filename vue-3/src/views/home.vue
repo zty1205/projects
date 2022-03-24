@@ -48,6 +48,7 @@ export default {
 .content {
   display: flex;
   padding: 12px 24px;
+  flex-wrap: wrap;
 }
 .route-btn {
   color: #fff;
@@ -59,6 +60,6 @@ export default {
   box-sizing: border-box;
   border: 1px solid #4fc08d;
   border-radius: 2em;
-  margin: 4px 12px;
+  margin: 8px 12px;
 }
 </style>

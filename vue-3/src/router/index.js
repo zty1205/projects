@@ -55,6 +55,21 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/vuex',
+    component: () => import('@/views/vuex/index.vue'),
+    meta: { title: 'Vuex' },
+    children: [
+      {
+        path: 'compose-api-vuex',
+        name: 'compose-api-vuex',
+        component: () => import('@/views/vuex/compose-api-vuex.vue'),
+        meta: {
+          title: 'vuex组合式API'
+        }
+      }
+    ]
   }
 ];
 

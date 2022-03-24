@@ -18,4 +18,17 @@ button {
   outline: none;
   user-select: none;
 }
+
+.basic-btn {
+  color: #fff;
+  width: 200px;
+  text-align: center;
+  padding: 6px 12px;
+  background-color: #4fc08d;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+  border: 1px solid #4fc08d;
+  border-radius: 2em;
+  margin: 0 12px;
+}
 </style>
