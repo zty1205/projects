@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import myPlugin from './plugin';
 
 // 创建一个新的 store 实例
 const store = createStore({
@@ -26,7 +27,8 @@ const store = createStore({
   },
   getters: {
     getCount: (state) => `来自store中的getter: ${state.count}`
-  }
+  },
+  plugins: [myPlugin]
 });
 
 export default store;
