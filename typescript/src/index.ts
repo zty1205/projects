@@ -1,5 +1,6 @@
 import { OnePerson } from './modules/interface';
 import { Person1, Person2 } from './modules/class';
+import { HelloW } from './modules/decorators';
 
 // 接口使用函数
 function p(person: OnePerson): void {
@@ -27,3 +28,9 @@ let p2 = new Person2({
 });
 
 console.log('p2 children: ', p2.children);
+
+console.clear();
+const hw = new HelloW('hello');
+hw.greet();
+hw.say('zty');
+hw.x;
