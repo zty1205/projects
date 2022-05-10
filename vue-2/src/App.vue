@@ -1,10 +1,20 @@
 <template>
   <div id="app">
-    <keep-alive :include="/life-style/">
+    <keep-alive :include="includes">
       <router-view></router-view>
     </keep-alive>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      includes: ["left-style", "dy-route"],
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 #app {

@@ -57,5 +57,11 @@ export default [
     component: () => import('@/views/learn/v_plugin.vue'),
     title: 'vue插件示例',
     name: '插件-组件'
+  },
+  {
+    path: '/vue-router/dy-route',
+    component: () => import('@/views/router/dy-route.vue'),
+    title: 'vue动态路由',
+    name: 'vue动态添加路由'
   }
 ];
