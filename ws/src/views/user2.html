@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>用户一</title>
+    <style>
+      body {
+        padding: 12px;
+      }
+      #name {
+        margin-top: 10px;
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      #content {
+        margin: 10px 0;
+        width: 400px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        min-height: 320px;
+      }
+      .msg-self {
+        text-align: left;
+      }
+      .msg-else {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="name"></div>
+    <label>聊天内容:</label>
+
+    <div id="content"></div>
+
+    <div>
+      <input id="sendMsg" type="text" />
+      <button id="btn_send">发送</button>
+    </div>
+
+    <!-- 首先引入 socket.io 客户端脚本-->
+    <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
+    <script src="/index.js"></script>
+    <script type="text/javascript">
+      const user = {
+        id: '2',
+        name: '韩梅梅'
+      };
+
+      main(user);
+    </script>
+  </body>
+</html>
