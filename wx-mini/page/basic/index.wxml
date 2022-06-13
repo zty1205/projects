@@ -1,0 +1,16 @@
+<!--page/basic/index.wxml-->
+<view class="page">
+  <view class="z_header">
+    <view class="z_header_desc">小程序基础能力，包括生命周期等</view>
+  </view>
+  <view class="z_content">
+    <view class="z_list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="z_item" bindtap="onTap" data-index="{{index}}">
+          <view class="z_item__title">{{item.title}}</view>
+          <image class="z_item__img" src="images/icon_{{item.id}}.png"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

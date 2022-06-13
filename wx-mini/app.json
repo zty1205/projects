@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "page/basic/index",
+    "page/component/index",
+    "page/API/index",
+    "page/cloud/index"
+  ],
+  "subpackages": [
+    {
+      "root": "packageBasic",
+      "pages": [
+        "page/lifestyle/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "page/component/index": {
+      "network": "all",
+      "packages": [
+        "packageBasic"
+      ]
+    }
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#F7F7F7",
+    "list": [
+      {
+        "pagePath": "page/basic/index",
+        "iconPath": "image/icon_component.png",
+        "selectedIconPath": "image/icon_component_HL.png",
+        "text": "基础"
+      },
+      {
+        "pagePath": "page/component/index",
+        "iconPath": "image/icon_component.png",
+        "selectedIconPath": "image/icon_component_HL.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "page/API/index",
+        "iconPath": "image/icon_API.png",
+        "selectedIconPath": "image/icon_API_HL.png",
+        "text": "接口"
+      },
+      {
+        "pagePath": "page/cloud/index",
+        "iconPath": "image/icon_cloud.png",
+        "selectedIconPath": "image/icon_cloud_HL.png",
+        "text": "云开发"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

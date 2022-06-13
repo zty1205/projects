@@ -1,0 +1,48 @@
+/**app.wxss**/
+.page {
+  min-height: 100%;
+  background-color: #f7f7f7;
+  color: #000000e6;
+  font-size: 16px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  max-width: 600px;
+}
+
+.z_header {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  color: #888888;
+  font-size: 14px;
+}
+
+.z_content {
+  padding: 10px 0;
+}
+
+.z_list {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.z_item {
+  margin: 10px 0;
+  background-color:#ffffff;
+  border-radius: 2px;
+  overflow: hidden;
+  padding: 20px;
+  transition: opacity .3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.z_item:first-child {
+  margin-top: 0
+}
+
+.z_item__img {
+  width: 30px;
+  height: 30px
+}
