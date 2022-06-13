@@ -1,0 +1,6 @@
+<view class="page">
+  <view class="content">
+    <view class="title">交通枢纽</view>
+  </view>
+  <foot-button></foot-button>
+</view>

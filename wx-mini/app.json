@@ -3,7 +3,8 @@
     "page/basic/index",
     "page/component/index",
     "page/API/index",
-    "page/cloud/index"
+    "page/cloud/index",
+    "page/empty/index"
   ],
   "subpackages": [
     {

@@ -1,0 +1,5 @@
+<view class="footer {{footClass}}" style="width: {{width}}">
+  <button type="primary" class="footer-button {{btnClass}}" bindtap="onBack">路由返回</button>
+  <button type="primary" class="footer-button {{btnClass}}" bindtap="onTabbar">返回Tab</button>
+  <button wx:if="{{forward}}" type="default" class="footer-button {{btnClass}}" bindtap="onForward">路由前进</button>
+</view>

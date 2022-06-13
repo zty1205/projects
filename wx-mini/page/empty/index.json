@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "foot-button": "/components/foot-button/index"
+  }
+}

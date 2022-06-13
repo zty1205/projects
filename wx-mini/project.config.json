@@ -47,7 +47,17 @@
   "libVersion": "2.22.0",
   "appid": "wxd3c53f727e000c3c",
   "projectname": "wx-mini",
-  "condition": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "生命周期",
+          "pathName": "packageBasic/page/lifestyle/index",
+          "query": ""
+        }
+      ]
+    }
+  },
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2

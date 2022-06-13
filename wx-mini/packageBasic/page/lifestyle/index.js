@@ -1,66 +1,29 @@
-// packageBasic/page/lifestyle/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    forward: "/page/empty/index"
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    console.log('Page onLoad 监听页面加载')
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady() {
-
+    console.log('Page onReady 监听页面初次渲染完成')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow() {
-
+    console.log('Page onShow 监听页面显示')
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide() {
-
+    console.log('Page onHide 监听页面隐藏')
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload() {
-
+    console.log('Page onUnload 监听页面卸载')
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh() {
-
+    console.log('Page onPullDownRefresh 监听用户下拉动作')
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom() {
-
+    console.log('Page onReachBottom 页面上拉触底事件的处理函数')
   },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage() {
-
+    console.log('Page onShareAppMessage 用户点击右上角分享')
   }
 })

@@ -1,2 +1,6 @@
-<!--packageBasic/page/lifestyle/index.wxml-->
-<text>packageBasic/page/lifestyle/index.wxml</text>
+<view class="page">
+<view class="content">
+<life-comp></life-comp>
+</view>
+<foot-button forward="{{forward}}"></foot-button>
+</view>

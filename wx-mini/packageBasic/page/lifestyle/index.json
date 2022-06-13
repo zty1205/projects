@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "foot-button": "/components/foot-button/index",
+    "life-comp": "../../components/life-comp/index"
+  }
 }
