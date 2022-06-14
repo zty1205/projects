@@ -10,7 +10,8 @@
     {
       "root": "packageBasic",
       "pages": [
-        "page/lifestyle/index"
+        "page/lifestyle/index",
+        "page/wxml/index"
       ]
     }
   ],

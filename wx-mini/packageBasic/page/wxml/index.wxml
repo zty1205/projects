@@ -1,0 +1,33 @@
+<import src="/packageBasic/template/msg.wxml"></import>
+<view class="page">
+  <view class="content">
+    <view class="z_block">
+      <view class="title">数据绑定</view>
+      <view class="ctx">{{message}}</view>
+    </view>
+    <view class="z_block">
+      <view class="title">列表渲染</view>
+      <view class="ctx">
+        <view wx:for="{{array}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this">
+          {{idx}}: {{itemName.message}}
+        </view>
+      </view>
+    </view>
+    <view class="z_block" bindtap="onAdd">
+      <view class="title">条件渲染</view>
+      <view class="ctx">
+        <view>当前数：{{num}}</view>
+        <view wx:if="{{num % 3 === 0}}">3倍</view>
+        <view wx:elif="{{num % 2 === 0}}">2倍</view>
+        <view wx:else>其他倍数</view>
+      </view>
+    </view>
+    <view class="z_block">
+      <view class="title">引用模板</view>
+      <view class="ctx">
+        <template is="msgItem" data="{{msg: '传入的msg'}}"></template>
+        <include src="/packageBasic/template/A.wxml"></include>
+      </view>
+    </view>
+  </view>
+</view>

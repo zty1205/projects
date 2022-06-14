@@ -1,0 +1,5 @@
+<template name="msgItem">
+  <view>
+    模板msg: {{msg}}
+  </view>
+</template>

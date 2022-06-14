@@ -7,6 +7,11 @@ Page({
   data: {
     list: [
       {
+        id: 'wxml',
+        title: 'WXML语法',
+        url: '/packageBasic/page/wxml/index'
+      },
+      {
         id: 'lifestyle',
         title: '生命周期',
         url: '/packageBasic/page/lifestyle/index'
@@ -14,9 +19,7 @@ Page({
     ]
   },
   onTap(e) {
-    console.log('e = ', e)
     const index = e.currentTarget.dataset.index
-    console.log('index = ', index)
     const item = this.data.list[index]
     wx.navigateTo({
       url: item.url,

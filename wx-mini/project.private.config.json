@@ -18,6 +18,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "packageBasic/page/wxml/index",
+          "pathName": "packageBasic/page/wxml/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
