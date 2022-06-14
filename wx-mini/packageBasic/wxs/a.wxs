@@ -1,0 +1,51 @@
+// 注意wxs的es版本表现为es5
+var m1 = require('./foo.wxs');
+var msg = 'I am  module a';
+
+var dataTypes = [
+  {
+    name: '数值',
+    title: 'number',
+    value: 1
+  },
+  {
+    name: '字符串',
+    title: 'string',
+    value: "s"
+  },
+  {
+    name: '布尔值',
+    title: 'boolean',
+    value: true
+  },{
+    name: '对象',
+    title: 'object',
+    value: {}
+  },{
+    name: '函数',
+    title: 'function',
+    value: function() {}
+  },{
+    name: '数组',
+    title: 'array',
+    value: []
+  },{
+    name: '日期',
+    title: 'date',
+    value: getDate()
+  },{
+    name: '正则',
+    title: 'regexp',
+    value: getRegExp('', 'gm')
+  },
+]
+
+// for (var i = 0; i < dataTypes.length; i++) {
+//   var item = dataTypes[i]
+//   console.log(item.title + ' | ' + item.name + ' | ' + item.value.constructor  + ' | ' + typeof item.value)
+// }
+
+module.exports = {
+  msg: msg,
+  foo: m1.foo
+}

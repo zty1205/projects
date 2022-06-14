@@ -1,0 +1,6 @@
+function foo() {
+  return 'I am module foo'
+}
+module.exports = {
+  foo: foo
+}

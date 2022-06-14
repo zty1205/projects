@@ -20,8 +20,8 @@
           "scene": null
         },
         {
-          "name": "packageBasic/page/wxml/index",
-          "pathName": "packageBasic/page/wxml/index",
+          "name": "wxs",
+          "pathName": "packageBasic/page/wxs/index",
           "query": "",
           "launchMode": "default",
           "scene": null

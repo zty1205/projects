@@ -1,0 +1,19 @@
+<wxs src="/packageBasic/wxs/a.wxs" module="tools" />
+<wxs module="m2">
+  var msg = "同文件内wxs的msg";
+  module.exports.message = msg;
+</wxs>
+
+<view class="page">
+  <view class="z_block">
+    <view class="title">使用内部WXS</view>
+    <view class="ctx"> {{m2.message}} </view>
+  </view>
+  <view class="z_block">
+    <view class="title">使用外部WXS</view>
+    <view class="ctx">
+      <view> {{tools.msg}} </view>
+      <view> {{tools.foo()}}</view>
+    </view>
+  </view>
+</view>

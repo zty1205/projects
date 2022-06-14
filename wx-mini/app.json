@@ -11,7 +11,8 @@
       "root": "packageBasic",
       "pages": [
         "page/lifestyle/index",
-        "page/wxml/index"
+        "page/wxml/index",
+        "page/wxs/index"
       ]
     }
   ],

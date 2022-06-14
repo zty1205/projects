@@ -12,6 +12,11 @@ Page({
         url: '/packageBasic/page/wxml/index'
       },
       {
+        id: 'wxs',
+        title: 'WXS语法',
+        url: '/packageBasic/page/wxs/index'
+      },
+      {
         id: 'lifestyle',
         title: '生命周期',
         url: '/packageBasic/page/lifestyle/index'
