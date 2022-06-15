@@ -12,7 +12,8 @@
       "pages": [
         "page/lifestyle/index",
         "page/wxml/index",
-        "page/wxs/index"
+        "page/wxs/index",
+        "page/event/index"
       ]
     }
   ],

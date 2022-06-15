@@ -1,0 +1,91 @@
+<wxs module="event">
+  function handleWXSTap(e, ownerInstance) {
+    // 入参 event 是小程序事件对象基础上多了 event.instance 来表示触发事件的组件的 ComponentDescriptor 实例。ownerInstance 表示的是触发事件的组件所在的组件的 ComponentDescriptor 实例，如果触发事件的组件是在页面内的，ownerInstance 表示的是页面实例
+    console.log('e = ', e)
+    console.log('ownerInstance = ', ownerInstance)
+    return false // 不往上冒泡，相当于调用了同时调用了 stopPropagation 和preventDefault
+  }
+  module.exports.handleWXSTap = handleWXSTap
+</wxs>
+
+<view class="page">
+  <view class="content">
+    <view class="z_block">
+      <view class="title">基础</view>
+      <view class="ctx">
+        <view class="btn" bindtap="onBasicClick">点击</view>
+        <view class="btn" bind:longpress="onBasicLong">长按</view>
+      </view>
+      <view class="title title-next">传达参数</view>
+      <view class="ctx">
+        <view class="btn" data-msg="消息" mark:m1='mark' bindtap="onAugClick">点击 [属性data-msg="消息" mark:m1='mark']</view>
+      </view>
+    </view>
+    <view class="z_block">
+      <view class="title">冒泡</view>
+      <view class="ctx">
+        <view id="outer" mark:outer="1" data-outer="1" class="outer-box" bindtap="handleMPOuter">
+          outer view
+          <view id="middle" mark:middle="2" data-middle="1" class="middle-box" bindtap="handleMPMiddle">
+            middle view
+            <view id="inner" mark:inner="3" data-inner="1" class="inner-box" bindtap="handleMPInner">
+              inner view
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="title title-next">阻止冒泡</view>
+      <view class="ctx">
+        <view id="outer" class="outer-box" bindtap="handleMPOuter">
+          outer view
+          <view id="middle" class="middle-box" catchtap="handleMPMiddle">
+            middle view -- catch
+            <view id="inner" class="inner-box" bindtap="handleMPInner">
+              inner view
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="z_block">
+      <view class="title">捕获</view>
+      <view class="ctx">
+        <view id="outer" class="outer-box" bind:touchstart="handleBHTOuter" capture-bind:touchstart="handleBHTOuterCap">
+          outer view
+          <view id="inner" class="inner-box" bind:touchstart="handleBHTInner" capture-bind:touchstart="handleBHTInnerCap">
+            inner view
+          </view>
+        </view>
+      </view>
+      <view class="title title-next">捕获+冒泡</view>
+      <view class="ctx">
+        <view id="outer" class="outer-box" bind:touchstart="handleBHTOuter" capture-catch:touchstart="handleBHTOuterCap">
+          outer view -- catch
+          <view id="inner" class="inner-box" bind:touchstart="handleBHTInner" capture-bind:touchstart="handleBHTInnerCap">
+            inner view
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="z_block">
+      <view class="title">互斥事件</view>
+      <view class="ctx">
+        <view id="outer" class="outer-box" mut-bind:tap="handleMPOuter">
+          outer view -- mut
+          <view id="middle" class="middle-box" bindtap="handleMPMiddle">
+            middle view
+            <view id="inner" class="inner-box" mut-bind:tap="handleMPInner">
+              inner view -- mut
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="z_block">
+    <view class="title">WXS响应事件</view>
+    <view class="ctx">
+      <view id="wxxs" class="btn" bindtap="{{event.handleWXSTap}}">点击</view>
+    </view>
+  </view>
+</view>

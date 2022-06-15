@@ -1,0 +1,51 @@
+.page {
+  padding-top: 2px;
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.title-next {
+  margin-top: 12px;
+}
+
+.ctx {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.btn {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 100px;
+  padding: 0 8px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  background-color: rgb(20, 72, 214);
+  margin: 8px;
+}
+
+.outer-box {
+  background: rgb(233, 55, 55);
+  color: white;
+  padding: 8px;
+}
+
+.middle-box {
+  background: rgb(50, 236, 25);
+  color: white;
+  padding: 8px;
+}
+
+.inner-box {
+  background: rgb(117, 55, 233);
+  width: 200px;
+  color: white;
+  padding: 8px;
+}

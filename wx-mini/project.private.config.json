@@ -25,6 +25,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "事件",
+          "pathName": "packageBasic/page/event/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

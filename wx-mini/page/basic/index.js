@@ -17,6 +17,11 @@ Page({
         url: '/packageBasic/page/wxs/index'
       },
       {
+        id: 'event',
+        title: '事件系统',
+        url: '/packageBasic/page/event/index'
+      },
+      {
         id: 'lifestyle',
         title: '生命周期',
         url: '/packageBasic/page/lifestyle/index'
