@@ -1,0 +1,26 @@
+.page {
+  padding-top: 2px;
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.title-next {
+  margin-top: 12px;
+}
+
+.ctx {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.btn {
+  width: unset !important;
+  margin: 10px 0 !important;
+  font-weight: normal;
+}

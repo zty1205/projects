@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="content">
+    <view class="z_block">
+      <view class="title">Button授权</view>
+      <view class="ctx">
+        <button class="btn" type="primary" open-type="contact" bindcontact="onGetContact">打开客服会话</button>
+        <button class="btn" type="primary" open-type="share" bindtap="onShare">转发</button>
+        <button class="btn" type="primary" open-type="getPhoneNumber" bindgetphonenumber="onGetMobile">手机号</button>
+        <button class="btn" type="primary" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">用户信息</button>
+        <button class="btn" type="primary" open-type="launchApp" bindtap="onOpenApp">打开APP</button>
+        <button class="btn" type="primary" open-type="openSetting" bindtap="onSetting">打开授权设置页</button>
+        <button class="btn" type="primary" open-type="feedback" bindtap="onFeedBack">用户信息</button>
+        <button class="btn" type="primary" open-type="chooseAvatar" bindchooseavatar="onGetAvatar">选择头像</button>
+      </view>
+    </view>
+    <view class="z_block">
+      <view class="title">authorize授权</view>
+      <view class="ctx">
+        <button class="btn" type="primary" bindtap="onGetLoc">地理位置</button>
+        <button class="btn" type="primary" bindtap="onUserLocationBackground">后台定位</button>
+        <button class="btn" type="primary" bindtap="onRecord">麦克风</button>
+        <button class="btn" type="primary" bindtap="onCamera">摄像头</button>
+        <button class="btn" type="primary" bindtap="onBluetooth">蓝牙</button>
+        <button class="btn" type="primary" bindtap="onWritePhotosAlbum">添加到相册</button>
+        <button class="btn" type="primary" bindtap="onAddPhoneContact">添加到联系人</button>
+        <button class="btn" type="primary" bindtap="onAddPhoneCalendar">添加到日历</button>
+        <button class="btn" type="primary" bindtap="onWerun">微信运动步数</button>
+      </view>
+    </view>
+  </view>
+</view>

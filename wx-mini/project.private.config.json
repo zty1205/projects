@@ -13,13 +13,6 @@
           "query": ""
         },
         {
-          "name": "",
-          "pathName": "page/empty/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
           "name": "wxs",
           "pathName": "packageBasic/page/wxs/index",
           "query": "",
@@ -29,6 +22,13 @@
         {
           "name": "事件",
           "pathName": "packageBasic/page/event/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "授权",
+          "pathName": "packageBasic/page/auth/index",
           "query": "",
           "launchMode": "default",
           "scene": null

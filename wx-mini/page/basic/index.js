@@ -25,6 +25,11 @@ Page({
         id: 'lifestyle',
         title: '生命周期',
         url: '/packageBasic/page/lifestyle/index'
+      },
+      {
+        id: 'auth',
+        title: '授权',
+        url: '/packageBasic/page/auth/index'
       }
     ]
   },
