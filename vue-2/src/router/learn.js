@@ -63,5 +63,11 @@ export default [
     component: () => import('@/views/router/dy-route.vue'),
     title: 'vue动态路由',
     name: 'vue动态添加路由'
+  },
+  {
+    path: '/vue-router/func-cpmp',
+    component: () => import('@/views/learn/func-component.vue'),
+    title: 'vue函数式组件',
+    name: '函数式组件'
   }
 ];
