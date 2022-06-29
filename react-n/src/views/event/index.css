@@ -1,0 +1,16 @@
+.outer-box {
+  background-color: red;
+  color: #fff;
+  padding: 20px 22px;
+}
+.middle-box {
+  background-color: black;
+  color: #ffffff;
+  padding: 20px 22px;
+}
+.inner-box {
+  background-color: blue;
+  color: #fff;
+  height: 160px;
+  padding: 20px 22px;
+}
