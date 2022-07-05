@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件</title>
+    <style>
+      .box {
+        padding: 12px;
+        margin: 8px;
+        color: #fff;
+      }
+      .outer {
+        background: red;
+      }
+      .middle {
+        background: blue;
+      }
+      .inner {
+        background: black;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="btn1" onclick="inlineBtnClick(event, this)">click me</button>
+
+      <div class="outer box" id="outer">
+        outer
+        <div class="middle box" id="middle">
+          middle
+          <div class="inner box" id="inner">inner</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const btn1 = document.getElementById('btn1');
+      function inlineBtnClick(e) {
+        console.log('btn1 inline dom1 event', e);
+      }
+      // btn1.onclick = function (e) {
+      //   console.log('btn1 dom1 event', e);
+      // };
+      btn1.addEventListener('click', function (e) {
+        // 不会覆盖dom1事件
+        console.log('btn1 dom2 event', e);
+      });
+
+      document.getElementById('outer').addEventListener('click', function (e) {
+        console.log('outer');
+      });
+
+      document.getElementById('middle').addEventListener('click', function (e) {
+        console.log('middle');
+      });
+
+      document.getElementById('inner').addEventListener('click', function (e) {
+        console.log('inner');
+      });
+    </script>
+  </body>
+</html>
