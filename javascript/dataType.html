@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据类型</title>
+  </head>
+  <body>
+    <script>
+      function Person(name) {
+        this.name = name;
+      }
+      class Color {
+        constructor(c) {
+          this.c = c;
+        }
+      }
+      const type = [
+        {
+          name: 'Undefined',
+          value: undefined
+        },
+        {
+          name: 'Null',
+          value: null
+        },
+        {
+          name: 'Boolean',
+          value: true
+        },
+        {
+          name: 'Number',
+          value: 9
+        },
+        {
+          name: 'String',
+          value: 's'
+        },
+        {
+          name: 'Object',
+          value: {}
+        },
+        {
+          name: 'Array',
+          value: []
+        },
+        {
+          name: 'Date',
+          value: new Date()
+        },
+        {
+          name: 'Function',
+          value: function () {
+            console.log('p', Person);
+          }
+        },
+        {
+          name: 'Asynv Function',
+          value: async function () {}
+        },
+        {
+          name: 'RegExp',
+          value: new RegExp('reg')
+        },
+        {
+          name: 'Symbol',
+          value: Symbol('sym')
+        },
+        {
+          name: 'Set',
+          value: new Set()
+        },
+        {
+          name: 'Map',
+          value: new Map()
+        },
+        {
+          name: 'class-function Person',
+          value: new Person('per')
+        },
+
+        {
+          name: 'Class Color',
+          value: new Color('c')
+        }
+      ];
+
+      window.dataType = type;
+
+      let loopObj = {
+        val: 'loop',
+        next: undefined
+      };
+
+      loopObj.next = loopObj;
+
+      // type.forEach((item) => {
+      //   console.log(`${item.name}: ` + ' , constructor: ', item.value ? item.value.constructor : null);
+      // });
+
+      // type.forEach((item) => {
+      //   console.log(`${item.name}: ` + ' , Object toString: ', Object.prototype.toString.call(item.value));
+      // });
+
+      function JSONClone(val) {
+        return JSON.parse(JSON.stringify(val));
+      }
+
+      function deepClone(obj = new Object(), map = new WeakMap()) {
+        // 简单类型
+        if (obj == null || typeof obj !== 'object') return obj;
+        if (obj instanceof Date) return new Date(obj);
+        if (obj instanceof RegExp) return new Date(obj);
+
+        if (map.has(obj)) return map.get(obj);
+
+        let o = new obj.constructor();
+        map.set(obj, o);
+
+        for (let k in obj) {
+          if (obj.hasOwnProperty(k)) {
+            // 遍历一个实例对象的所有属性时忽略掉继承属性(从原型继承的属性)
+            o[k] = deepClone(obj[k], map);
+          }
+        }
+        return o;
+      }
+      console.log('type', type);
+      console.log('loopObj', loopObj);
+
+      console.log('JSONClone', JSONClone(type));
+
+      console.log('deepClone', deepClone(type));
+    </script>
+  </body>
+</html>
