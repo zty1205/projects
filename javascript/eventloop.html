@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件循环</title>
+  </head>
+  <body>
+    <script>
+      new Promise((resolve) => {
+        console.log('resolve 1');
+        resolve();
+      }).then(() => {
+        setTimeout(() => console.log('timeout 1'));
+        new Promise((resolve) => {
+          console.log('resolve 2');
+          resolve();
+        });
+      });
+
+      console.log('log 1');
+
+      setTimeout(() => console.log('timeout 2'));
+
+      // resolve 1
+      // log 1
+      // resolve 2
+      // timeout 2
+      // timeout 1
+    </script>
+  </body>
+</html>
