@@ -1,5 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('./plugins/clean-webpack-plugin');
+const AnalyzeWebpackPlugin = require('./plugins/analyze-webpack-plugin');
+const InlineChunkWebpackPlugin = require('./plugins/inline-chunk-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -34,8 +37,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './public/index.html')
-    })
+      template: path.resolve(__dirname, 'public/index.html')
+    }),
+    new CleanWebpackPlugin(),
+    new AnalyzeWebpackPlugin(),
+    new InlineChunkWebpackPlugin([/runtime(.*)\.js/])
   ],
   optimization: {
     splitChunks: {
