@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layer</title>
+    <style>
+      .box1 {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background-color: blue;
+      }
+
+      .box2 {
+        width: 120px;
+        height: 120px;
+        margin: 20px;
+        background-color: brown;
+        z-index: 1;
+        position: relative;
+        transform: translateZ(10px);
+      }
+      .box3 {
+        width: 120px;
+        height: 120px;
+        background-color: black;
+        position: relative;
+        z-index: 4;
+        top: -40px;
+        left: 40px;
+        color: white;
+        padding: 40px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">渲染层</div>
+    <div class="box2">使用transform合成层</div>
+    <div class="box3">因为box2合成而发生隐式合成， 解决方式是调整z-index</div>
+  </body>
+</html>
