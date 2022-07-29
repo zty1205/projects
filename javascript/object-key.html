@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=0" />
+    <title>Object-key</title>
+  </head>
+  <body>
+    <script>
+      const ONE = Symbol('one');
+
+      const obj = {
+        [Symbol(0)]: Symbol(0),
+        [Symbol(1)]: Symbol(1),
+        [Symbol(4294967295)]: Symbol(4294967295),
+        [Symbol(4294967294)]: Symbol(4294967294),
+        [Symbol('B')]: Symbol('B'),
+        [Symbol('b')]: Symbol('b'),
+        [Symbol('A')]: Symbol('A'),
+        [Symbol('b2')]: Symbol('b2'),
+        [Symbol('b1')]: Symbol('b1'),
+        '-4294967294': -4294967294,
+        '-4294967295': -4294967295,
+        0: 0,
+        1: 1,
+        2: 2,
+        1: 1,
+        4294967295: 4294967295,
+        4294967294: 4294967294,
+        [Number.MAX_VALUE]: Number.MAX_VALUE,
+        [Number.MAX_SAFE_INTEGER]: Number.MAX_SAFE_INTEGER,
+        B: 'B',
+        b: 'b',
+        A: 'A',
+        b2: 'b2',
+        b1: 'b1',
+        [ONE]: ONE,
+        22: 11,
+        11: 22,
+        d: 'd',
+        c: 'c'
+      };
+
+      Object.defineProperties(obj, {
+        22: {
+          enumerable: false
+        },
+        11: {
+          enumerable: false
+        },
+        d: {
+          enumerable: false
+        },
+        c: {
+          enumerable: false
+        },
+        [ONE]: {
+          enumerable: false
+        }
+      });
+
+      // for (let i = 100; i < 999999; i++) {
+      //   obj[i] = i;
+      // }
+
+      /**
+       * console.log()的顺序
+       * 正整数从小到大，科学记数法表示的则使用尾巴数
+       * 负数从大到小
+       * 字符串，有点像按位比较ascii，从小到大
+       * Symbol 按Symbol里的属性按上面三个规则排列
+       * 找不到原因 mdn上写不属于任何公开的规范
+       */
+
+      console.log('obj = ', obj);
+
+      // const consolelogObj = {
+      //   0: 0
+      //   1: 1
+      //   1.1: 1.1
+      //   1.7976931348623157e+308: 1.7976931348623157e+308
+      //   2: 2
+      //   4294967294: 4294967294
+      //   4294967295: 4294967295
+      //   9007199254740991: 9007199254740991
+      //   -4294967294: -4294967294
+      //   -4294967295: -4294967295
+      //   A: "A"
+      //   B: "B"
+      //   b: "b"
+      //   b1: "b1"
+      //   b2: "b2"
+      //   Symbol(0): Symbol(0)
+      //   Symbol(1): Symbol(1)
+      //   Symbol(4294967294): Symbol(4294967294)
+      //   Symbol(4294967295): Symbol(4294967295)
+      //   Symbol(A): Symbol(A)
+      //   Symbol(B): Symbol(B)
+      //   Symbol(b1): Symbol(b1)
+      //   Symbol(b2): Symbol(b2)
+      //   Symbol(b): Symbol(b)
+      //   11: 22
+      //   22: 11
+      //   c: "c"
+      //   d: "d"
+      //   Symbol(one): Symbol(one)
+      // }
+
+      /**
+       * keys的顺序 可以作为
+       * 可以下标的自然数0-2^32-1
+       * 插入顺序 （不能打印Symbol）
+       *
+       * 合理的数组下标 https://262.ecma-international.org/9.0/#integer-index
+       * https://tc39.es/ecma262/#sec-object.keys
+       * EnumerableOwnPropertyNames: https://blog.csdn.net/xgangzai/article/details/116112851
+       * OwnPropertyKeys https://tc39.es/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-ownpropertykeys
+       * Symbol 不可枚举 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol#symbols_%E4%B8%8E_for...in_%E8%BF%AD%E4%BB%A3
+       */
+      console.log('keys = ', Object.keys(obj));
+
+      /**
+       * getOwnPropertyNames的顺序 可以作为
+       * 可以下标的自然数0-2^32-1
+       * 插入顺序 （不能打印Symbol） 不可遍历属性优先
+       *
+       * mdn https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames
+       *  Object.getOwnPropertyNames: https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.getownpropertynames
+       * 还是走到上门那个
+       */
+      console.log('getOwnPropertyNames = ', Object.getOwnPropertyNames(obj));
+
+      /**
+       * getOwnPropertySymbols的顺序 可以作为
+       * Symbol 按插入顺序 继承的优先
+       */
+      console.log('getOwnPropertySymbols', Object.getOwnPropertySymbols(obj));
+
+      /**
+       * ownKeys的顺序 可以作为
+       * 可以下标的自然数0-2^32-1
+       * 插入顺序 （不能打印Symbol） 继承的优先
+       * Symbol 按插入顺序 继承的优先
+       *
+       * mdn https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys
+       *
+       * https://tc39.es/ecma262/#sec-reflect.ownkeys 还在走到上门
+       */
+      console.log('ownKeys = ', Reflect.ownKeys(obj));
+
+      // 所有的都会走到 OwnPropertyKeys （https://tc39.es/ecma262/#sec-ordinaryownpropertykeys） 方法 然后筛选
+      // keys 过滤可枚举属性
+      // getOwnPropertyNames 除了Symbol属性
+      // getOwnPropertySymbols 只要Symbol
+      // keys 小孩子才做选择，我全都要
+
+      // for (let k in obj) {
+      //   console.log('k = ', k);
+      // }
+
+      // PrintProperties
+
+      // 为什么是数组下标优先 v8快属性
+      // 英文 https://v8.dev/blog/fast-properties
+      // 中文 https://blog.crimx.com/2018/11/25/v8-fast-properties/
+
+      // 参考文档 https://mp.weixin.qq.com/s/yFShMo5JGsqnNxXxPd6Wpg
+      // 参考2JSObject https://www.cnblogs.com/Bideam/p/6730759.html
+      // 参考3 https://blog.csdn.net/xgangzai/article/details/116112851
+      // for in https://v8.dev/blog/fast-for-in
+
+      console.log('eq ', console === window.console);
+
+      const proxyObj = new Proxy(obj, {
+        ownKeys(target) {
+          return ['0', '1', '2', '3'];
+        }
+      });
+      console.log('proxyObj', proxyObj);
+      console.log('p', Object.keys(proxyObj));
+    </script>
+  </body>
+</html>
