@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        margin: 20px;
+        background: red;
+        border: 1px solid red;
+        width: 200px;
+        height: 100px;
+        font-size: 20px;
+        color: #fff;
+        box-sizing: border-box;
+      }
+      .h1 {
+        display: none;
+      }
+      .h2 {
+        visibility: hidden;
+      }
+      .h3 {
+        opacity: 0;
+      }
+      .h4 {
+        position: absolute;
+        left: -1000px;
+        right: -1000px;
+      }
+      .h5 {
+        z-index: -1;
+        position: relative;
+      }
+      .h5-cover {
+        position: relative;
+        top: -120px;
+        background: blue;
+        border: 1px solid blue;
+      }
+      .h6 {
+        /* 可以显示 clip: rect(0, 10px, 10px, 0); */
+        /* 矩形裁剪 */
+        clip: rect(0, 0, 0, 0);
+        position: absolute;
+      }
+      .h7 {
+        /* 圆形裁剪 */
+        clip-path: circle(0);
+      }
+      .h8 {
+        transform: scale(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box h1" onclick="c1(1)">1</div>
+    <div class="box h2" onclick="c1(2)">2</div>
+    <div class="box h3" onclick="c1(3)">3</div>
+    <div class="box h4" onclick="c1(4)">4</div>
+    <div class="box h5" onclick="c1(5)">5</div>
+    <div class="box h5-cover">覆盖5元素</div>
+    <div class="box h6" onclick="c1(6)">6</div>
+    <div class="box h7" onclick="c1(7)">7</div>
+    <div class="box h8" onclick="c1(8)">8</div>
+  </body>
+  <script>
+    function c1(id) {
+      console.log('click ', id);
+    }
+  </script>
+</html>
